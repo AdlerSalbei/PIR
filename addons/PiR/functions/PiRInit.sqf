@@ -1,6 +1,5 @@
 ["PiR_injuriplayer_on", "CHECKBOX", ["Влючить ранения для игрока", "Enable injuries for player"], "Project injury Reaction", true] call cba_settings_fnc_init;
 
-EyeEffect0 = compile preprocessfilelinenumbers "\PiR\Functions\EyeEffect0.sqf";
 
 if (isServer) then {
 	
@@ -20,7 +19,7 @@ DropWeapon0 = compile preprocessfilelinenumbers "\PiR\Functions\DropWeapon0.sqf"
 Helmet0 = compile preprocessfilelinenumbers "\PiR\Functions\Helmet0.sqf";
 BendsDown0 = compile preprocessfilelinenumbers "\PiR\Functions\BendsDown0.sqf";
 UnconditionAnim0 = compile preprocessfilelinenumbers "\PiR\Functions\UnconditionAnim0.sqf";
-
+EyeEffect0 = compile preprocessfilelinenumbers "\PiR\Functions\EyeEffect0.sqf";
 PiR0 = compile preprocessfilelinenumbers "\PiR\Functions\PiR0.sqf";
 
 
