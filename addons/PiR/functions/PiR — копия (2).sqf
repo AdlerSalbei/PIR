@@ -45,7 +45,7 @@ fnc_PiR0 = {
 
 	if (vehicle _unit != _unit) exitWith {
 	
-		IF !(_unit getVariable ["dam_ignore_effect0",false]) then {
+		if !(_unit getVariable ["dam_ignore_effect0",false]) then {
 
 		 _unit setVariable ["dam_ignore_effect0",true];	
 		 _null = [_unit, _anim, _shans] spawn dam_effectnaglaza0;
@@ -56,7 +56,7 @@ fnc_PiR0 = {
 	
 	
 	
-IF !(_unit getVariable ["dam_ignore_injured0",false]) then {
+if !(_unit getVariable ["dam_ignore_injured0",false]) then {
 
 
 
@@ -127,14 +127,14 @@ _shans = 2;
 
 
 // Голова	
-IF ((_shans == 10) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
+if ((_shans == 10) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 		_unit setVariable ["dam_ignore_injured0",true];	
 		_unit 	removeAllEventHandlers "hitpart";
 
-		IF ((_shans - (random 25)) >=0) then {
+		if ((_shans - (random 25)) >=0) then {
 		_null = [_unit, _anim, _shans] spawn dam_shlem0;
-		} ELSE {
+		} else {
 
 		_null = [_unit, _anim, _shans] spawn dam_inCap0;	
 		};
@@ -142,68 +142,68 @@ IF ((_shans == 10) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 
 //	Живот и Грудь		
-IF (((_shans == 7) or (_shans == 9)) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
+if (((_shans == 7) or (_shans == 9)) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 		_unit setVariable ["dam_ignore_injured0",true];	
 		_unit 	removeAllEventHandlers "hitpart";
 
-		IF ((_shans - (random 22)) >=0) then {
+		if ((_shans - (random 22)) >=0) then {
 		_null = [_unit, _anim, _shans] spawn dam_contuzia0;
-		} ELSE {
-			IF ((_shans - (random 14)) >=0) then {
+		} else {
+			if ((_shans - (random 14)) >=0) then {
 		     _null = [_unit, _anim, _shans] spawn dam_otpolzanie0;	
-			} ELSE {
+			} else {
 			_null = [_unit, _anim, _shans] spawn dam_inCap0;
 			 };
 		};	
 		};
 
 // Верх руки и Низ руки
-IF (((_shans == 1) or (_shans == 3)) && ((7 - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
+if (((_shans == 1) or (_shans == 3)) && ((7 - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 		_unit setVariable ["dam_ignore_injured0",true];	
 		_unit 	removeAllEventHandlers "hitpart";
 
-		IF (((_shans - (random 8)) <=0) && !(_unit getVariable ["dam_ignore_dragger0",false])) then {
+		if (((_shans - (random 8)) <=0) && !(_unit getVariable ["dam_ignore_dragger0",false])) then {
 		_null = [_unit, _anim, _shans] spawn dam_bezoruzia0;
-		} ELSE {
-			IF ((_shans - (random 10)) >=0) then {
+		} else {
+			if ((_shans - (random 10)) >=0) then {
 		     _null = [_unit, _anim, _shans] spawn dam_inCap0;	
-			} ELSE {
+			} else {
 			_null = [_unit, _anim, _shans] spawn dam_otpolzanie0;
 			 };
 		};	
 		};	
 
 // Бедро, голень и стопа
-IF (((_shans == 6) or (_shans == 4) or (_shans == 2)) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
+if (((_shans == 6) or (_shans == 4) or (_shans == 2)) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 		_unit setVariable ["dam_ignore_injured0",true];	
 		_unit 	removeAllEventHandlers "hitpart";
 
-		IF ((_shans - (random 22)) >=0) then {
+		if ((_shans - (random 22)) >=0) then {
 		_null = [_unit, _anim, _shans] spawn dam_inCap0;
-		} ELSE {
+		} else {
 		     _null = [_unit, _anim, _shans] spawn dam_otpolzanie0;	
 
 		};	
 		};	
 
 // Подрыв
-IF ((_shans == 8) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
+if ((_shans == 8) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 		_unit setVariable ["dam_ignore_injured0",true];	
 		_unit 	removeAllEventHandlers "hitpart";
 
-		IF ((_shans - (random 16)) >=0) then {
+		if ((_shans - (random 16)) >=0) then {
 		_null = [_unit, _anim, _shans] spawn dam_otpolzanie0;
-		} ELSE {
-			IF ((_shans - (random 12)) >=0) then {
+		} else {
+			if ((_shans - (random 12)) >=0) then {
 		     _null = [_unit, _anim, _shans] spawn dam_inCap0;	
-			} ELSE {
-			IF ((_shans - (random 12)) >=0) then {
+			} else {
+			if ((_shans - (random 12)) >=0) then {
 		     _null = [_unit, _anim, _shans] spawn dam_contuzia0;	
-			} ELSE {
+			} else {
 			_null = [_unit, _anim, _shans] spawn dam_shlem0;
 			 };
 		};	
@@ -213,7 +213,7 @@ IF ((_shans == 8) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_i
 	//_____________________________________________________________________________________________________________________	
 
 //________________________________Крик при попадании_______________________________________________________________________
-  IF (_shans !=10 ) then {
+  if (_shans !=10 ) then {
    [_unit, (selectRandom ["Hit1", "Hit2", "Hit3", "Hit4", "Hit5", "Hit6", "Hit7", "Hit8", "Hit9", "Hit10"]) ] remoteExec [ "say3D", 0];
   };
 //__________________________________________________________________________________________________________________________
@@ -221,7 +221,7 @@ IF ((_shans == 8) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_i
 
 //________________________________Эффекты крови_____________________________________________________________________________
 
-	IF !(_unit getVariable ["dam_ignore_effect0",false]) then {
+	if !(_unit getVariable ["dam_ignore_effect0",false]) then {
 
 	 _unit setVariable ["dam_ignore_effect0",true];	
 	 _null = [_unit, _anim, _shans] spawn dam_effectnaglaza0;
@@ -291,7 +291,7 @@ hint (str _this);
 	
 	if (vehicle _unit != _unit) exitWith {
 	
-		IF !(_unit getVariable ["dam_ignore_effect0",false]) then {
+		if !(_unit getVariable ["dam_ignore_effect0",false]) then {
 
 		 _unit setVariable ["dam_ignore_effect0",true];	
 		 _null = [_unit, _anim, _shans] spawn dam_effectnaglaza;
@@ -299,7 +299,7 @@ hint (str _this);
 	
 	};
 
-IF !(_unit getVariable ["dam_ignore_injured0",false]) then {
+if !(_unit getVariable ["dam_ignore_injured0",false]) then {
 
 
 //________________________________Распределение анимаций по частям тела______________________________________________________________________		
@@ -367,14 +367,14 @@ _shans = 2;
 //_____________________________________________________________________________________________________________________
 
 // Голова	
-IF ((_shans == 10) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
+if ((_shans == 10) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 		_unit setVariable ["dam_ignore_injured0",true];	
 		_unit 	removeAllEventHandlers "hitpart";
 
-		IF ((_shans - (random 25)) >=0) then {
+		if ((_shans - (random 25)) >=0) then {
 		_null = [_unit, _anim, _shans] spawn dam_shlem;
-		} ELSE {
+		} else {
 
 		_null = [_unit, _anim, _shans] spawn dam_inCap;	
 		};
@@ -382,68 +382,68 @@ IF ((_shans == 10) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 
 //	Живот и Грудь		
-IF (((_shans == 7) or (_shans == 9)) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
+if (((_shans == 7) or (_shans == 9)) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 		_unit setVariable ["dam_ignore_injured0",true];	
 		_unit 	removeAllEventHandlers "hitpart";
 
-		IF ((_shans - (random 22)) >=0) then {
+		if ((_shans - (random 22)) >=0) then {
 		_null = [_unit, _anim, _shans] spawn dam_contuzia;
-		} ELSE {
-			IF ((_shans - (random 14)) >=0) then {
+		} else {
+			if ((_shans - (random 14)) >=0) then {
 		     _null = [_unit, _anim, _shans] spawn dam_otpolzanie;	
-			} ELSE {
+			} else {
 			_null = [_unit, _anim, _shans] spawn dam_inCap;
 			 };
 		};	
 		};
 
 // Верх руки и Низ руки
-IF (((_shans == 1) or (_shans == 3)) && ((7 - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
+if (((_shans == 1) or (_shans == 3)) && ((7 - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 		_unit setVariable ["dam_ignore_injured0",true];	
 		_unit 	removeAllEventHandlers "hitpart";
 
-		IF (((_shans - (random 8)) <=0) && !(_unit getVariable ["dam_ignore_dragger0",false])) then {
+		if (((_shans - (random 8)) <=0) && !(_unit getVariable ["dam_ignore_dragger0",false])) then {
 		_null = [_unit, _anim, _shans] spawn dam_bezoruzia;
-		} ELSE {
-			IF ((_shans - (random 10)) >=0) then {
+		} else {
+			if ((_shans - (random 10)) >=0) then {
 		     _null = [_unit, _anim, _shans] spawn dam_inCap;	
-			} ELSE {
+			} else {
 			_null = [_unit, _anim, _shans] spawn dam_otpolzanie;
 			 };
 		};	
 		};	
 
 // Бедро, голень и стопа
-IF (((_shans == 6) or (_shans == 4) or (_shans == 2)) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
+if (((_shans == 6) or (_shans == 4) or (_shans == 2)) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 		_unit setVariable ["dam_ignore_injured0",true];	
 		_unit 	removeAllEventHandlers "hitpart";
 
-		IF ((_shans - (random 22)) >=0) then {
+		if ((_shans - (random 22)) >=0) then {
 		_null = [_unit, _anim, _shans] spawn dam_inCap;
-		} ELSE {
+		} else {
 		     _null = [_unit, _anim, _shans] spawn dam_otpolzanie;	
 
 		};	
 		};	
 
 // Подрыв
-IF ((_shans == 8) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
+if ((_shans == 8) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_ignore_injured0",false])) then {
 
 		_unit setVariable ["dam_ignore_injured0",true];	
 		_unit 	removeAllEventHandlers "hitpart";
 
-		IF ((_shans - (random 16)) >=0) then {
+		if ((_shans - (random 16)) >=0) then {
 		_null = [_unit, _anim, _shans] spawn dam_otpolzanie;
-		} ELSE {
-			IF ((_shans - (random 12)) >=0) then {
+		} else {
+			if ((_shans - (random 12)) >=0) then {
 		     _null = [_unit, _anim, _shans] spawn dam_inCap;	
-			} ELSE {
-			IF ((_shans - (random 12)) >=0) then {
+			} else {
+			if ((_shans - (random 12)) >=0) then {
 		     _null = [_unit, _anim, _shans] spawn dam_contuzia;	
-			} ELSE {
+			} else {
 			_null = [_unit, _anim, _shans] spawn dam_shlem;
 			 };
 		};	
@@ -456,7 +456,7 @@ IF ((_shans == 8) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_i
 
 	//________________________________Крик при попадании_______________________________________________________________________
 
-  IF (_shans !=10 ) then {
+  if (_shans !=10 ) then {
    [_unit, (selectRandom ["Hit1", "Hit2", "Hit3", "Hit4", "Hit5", "Hit6", "Hit7", "Hit8", "Hit9", "Hit10"]) ] remoteExec [ "say3D", 0];
   };
 
@@ -469,7 +469,7 @@ IF ((_shans == 8) && ((_shans - (random 10)) >=0) && !(_unit getVariable ["dam_i
 
 //________________________________Эффекты крови_____________________________________________________________________________
 
-	IF !(_unit getVariable ["dam_ignore_effect0",false]) then {
+	if !(_unit getVariable ["dam_ignore_effect0",false]) then {
 
 	 _unit setVariable ["dam_ignore_effect0",true];	
 	 _null = [_unit, _anim, _shans] spawn dam_effectnaglaza;
@@ -527,10 +527,10 @@ while { (true) } do {
 
 			 _x removeAllMPEventHandlers "MPHit";
  			 _x setVariable ["dam_ignore_hit0",true];
-				IF (!isplayer _x) then {
+				if (!isplayer _x) then {
 				 [_x, ["HitPart", {(_this select 0) spawn fnc_PiR}]] remoteExec ["addEventHandler",0 , true];
-				} ELSE {
-					IF !(PiR_injuriplayer_on) exitwith {};
+				} else {
+					if !(PiR_injuriplayer_on) exitwith {};
 				 [_x, ["HitPart", {(_this select 0) spawn fnc_PiR0}]] remoteExec ["addEventHandler",0 , true];
 				};
 			 };
